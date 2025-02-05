@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Signup from "./pages/signup";
 import Login from "./pages/login";
 import CalendarPage from "./pages/Calender";
-
+import MealPlan from "./pages/MealPlan";
 
 function App() {
   return (
@@ -14,6 +14,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/calender" element={<CalendarPage />} />
+        <Route path="/mealplan" element={<MealPlan />} />
       </Routes>
     </Router>
   );
