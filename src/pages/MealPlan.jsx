@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const MealPlan = () => {
-  const [selectedMeals, setSelectedMeals] = useState([]);
+  const [selectedMeals, setSelectedMeals] = useState([]); // ✅ Correct for JSX
   const [showSubscription, setShowSubscription] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -131,14 +131,15 @@ const MealPlan = () => {
 
   const handleMealSelection = (mealId) => {
     setSelectedMeals((prev) => {
+      if (!Array.isArray(prev)) return []; // Ensure prev is always an array
       if (prev.includes(mealId)) {
         return prev.filter((id) => id !== mealId);
       }
       if (prev.length >= 4) return prev;
-      return [...prev, mealId];
+      return [...prev, mealId]; // Ensure mealId is properly added
     });
   };
-
+  
   const handleMealSubmit = () => {
     if (selectedMeals.length < 1) {
       alert("Please select at least 1 meal");
@@ -193,7 +194,7 @@ const MealPlan = () => {
 
   return (
     <>
-      <header className="bg-green-600 text-white py-4 mb-8">
+      {/* <header className="bg-green-600 text-white py-4 mb-8">
         <div className="max-w-4xl mx-auto px-4">
           <a
             href="/"
@@ -202,7 +203,7 @@ const MealPlan = () => {
             CU Fit
           </a>
         </div>
-      </header>
+      </header> */}
 
       <div className="max-w-6xl mx-auto px-4 py-8">
         {!showSubscription ? (
@@ -220,55 +221,46 @@ const MealPlan = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              {mealOptions.map((meal) => (
-                <div
-                  key={meal.id}
-                  onClick={() => handleMealSelection(meal.id)}
-                  className={`
-                    p-6 rounded-lg border-2 cursor-pointer transition-all
-                    ${
-                      selectedMeals.includes(meal.id)
-                        ? "border-green-500 bg-green-50"
-                        : "border-gray-200 hover:border-green-300"
-                    }
-                  `}
-                >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-4">
-                      <span className="text-3xl">{meal.icon}</span>
-                      <div>
-                        <h3 className="text-xl font-semibold text-gray-800">
-                          {meal.name}
-                        </h3>
-                        <p className="text-gray-600 text-sm">
-                          {meal.description}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex-shrink-0 w-8">
-                      {selectedMeals.includes(meal.id) ? (
-                        <div className="bg-green-500 text-white rounded-full p-1">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-6 w-6"
-                            viewBox="0 0 20 20"
-                            fill="currentColor"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                              clipRule="evenodd"
-                            />
-                          </svg>
-                        </div>
-                      ) : (
-                        <div className="border-2 border-gray-300 rounded-full w-6 h-6"></div>
-                      )}
-                    </div>
-                  </div>
+      {mealOptions?.length > 0 ? (
+        mealOptions.map((meal) => (
+          <div
+            key={meal.id}
+            onClick={() => handleMealSelection(meal.id)}
+            className={`
+              p-6 rounded-lg border-2 cursor-pointer transition-all
+              ${
+                selectedMeals.includes(meal.id)
+                  ? "border-green-500 bg-green-50"
+                  : "border-gray-200 hover:border-green-300"
+              }
+            `}
+          >
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-4">
+                <span className="text-3xl">{meal.icon}</span>
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-800">
+                    {meal.name}
+                  </h3>
+                  <p className="text-gray-600 text-sm">{meal.description}</p>
                 </div>
-              ))}
+              </div>
+              <div className="flex-shrink-0 w-8">
+                {selectedMeals.includes(meal.id) ? (
+                  <div className="bg-green-500 text-white rounded-full p-1">
+                    ✅
+                  </div>
+                ) : (
+                  <div className="border-2 border-gray-300 rounded-full w-6 h-6"></div>
+                )}
+              </div>
             </div>
+          </div>
+        ))
+      ) : (
+        <p className="text-gray-500">No meals available.</p>
+      )}
+    </div>
 
             <div className="text-center">
               <p className="text-gray-600 mb-6">

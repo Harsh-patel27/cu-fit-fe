@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import styled from "styled-components";
@@ -186,11 +186,11 @@ const Button = styled.button`
       background-color: #c0392b;
     }
   ` : `
-    background-color: #2ecc71;
+    background-color: #16a34a;
     color: white;
     
     &:hover {
-      background-color: #27ae60;
+      background-color: #15803d;
     }
     
     &:disabled {

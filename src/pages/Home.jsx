@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -6,7 +7,7 @@ const Home = () => {
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-12">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-blue-600 mb-4">
+          <h1 className="text-4xl font-bold text-green-600 mb-4">
             Welcome to CU Fit
           </h1>
           <p className="text-xl text-gray-600">
@@ -41,7 +42,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="text-center bg-blue-500 text-white p-8 rounded-lg">
+        <div className="text-center bg-green-500 text-white p-8 rounded-lg">
           <h2 className="text-3xl font-bold mb-4">
             Ready to Start Your Fitness Journey?
           </h2>
@@ -51,7 +52,7 @@ const Home = () => {
           </p>
           <Link
             to="/signup"
-            className="inline-block bg-white text-blue-500 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition-colors"
+            className="inline-block bg-white text-green-500 px-8 py-3 rounded-full font-semibold hover:bg-green-50 transition-colors"
           >
             Get Started
           </Link>
