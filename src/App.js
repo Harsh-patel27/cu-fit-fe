@@ -9,6 +9,7 @@ import MealPlan from "./pages/MealPlan";
 import Header from "./components/Header";
 import { useLocation } from "react-router-dom";
 import { Test } from "./pages/Test";
+import DietSelection from "./pages/DietSelection";
 
 const AppLayout = ({ children }) => {
   const location = useLocation();
@@ -33,6 +34,7 @@ function App() {
           <Route path="/calender" element={<CalendarPage />} />
           <Route path="/mealplan" element={<MealPlan />} />
           <Route path="/test" element={<Test />} />
+          <Route path="/diet-selection" element={<DietSelection />} />
         </Routes>
       </AppLayout>
     </Router>
