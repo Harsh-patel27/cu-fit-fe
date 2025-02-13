@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 import { Button, Container, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -71,4 +71,4 @@ const DietSelection = () => {
     );
 };
 
-export default DietSelection;
+export default DietSelection; */
