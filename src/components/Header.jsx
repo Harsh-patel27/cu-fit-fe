@@ -9,7 +9,7 @@ const Header = () => {
   };
 
   return (
-    <header className="bg-green-600 text-white py-4">
+    <header className="bg-green-600 text-white py-4 sticky top-0 z-50 shadow-md">
       <div className="max-w-6xl mx-auto px-4 flex justify-between items-center">
         <Link
           to="/"
@@ -18,7 +18,7 @@ const Header = () => {
           CU Fit
         </Link>
 
-        <nav className="flex space-x-6">
+        {/* <nav className="flex space-x-6">
           <Link
             to="/calender"
             className={`hover:text-green-100 transition-colors ${isActive(
@@ -35,7 +35,15 @@ const Header = () => {
           >
             Meal Plan
           </Link>
-        </nav>
+          <Link
+            to="/diet-selection"
+            className={`hover:text-green-100 transition-colors ${isActive(
+              "/diet-selection"
+            )}`}
+          >
+            Diet Selection
+          </Link>
+        </nav> */}
       </div>
     </header>
   );
