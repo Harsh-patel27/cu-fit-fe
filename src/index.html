@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+
+    <div class="bg-white p-6 rounded-xl shadow-md w-96">
+        <h2 class="text-2xl font-bold mb-4 text-center">BMI Calculator</h2>
+
+        <label for="height">Height (cm):</label>
+        <input id="height" type="number" class="w-full p-2 border rounded mb-3" placeholder="Enter your height">
+
+        <label for="weight">Weight (kg):</label>
+        <input id="weight" type="number" class="w-full p-2 border rounded mb-3" placeholder="Enter your weight">
+
+        <button onclick="calculateBMI()" class="w-full bg-green-500 text-white p-2 rounded mt-3">
+            Calculate
+        </button>
+
+        <p id="result" class="mt-4 text-center text-lg font-bold"></p>
+    </div>
+
+    <script>
+        function calculateBMI() {
+            let height = document.getElementById('height').value / 100;
+            let weight = document.getElementById('weight').value;
+            let bmi = (weight / (height * height)).toFixed(2);
+            document.getElementById('result').innerText = `Your BMI is ${bmi}`;
+        }
+    </script>
+
+</body>
+</html>
