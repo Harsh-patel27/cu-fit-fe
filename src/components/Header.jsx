@@ -47,6 +47,13 @@ const Header = () => {
          >
            Meal Plan
          </Link>
+         <Link
+           to="/pain-injury-form"
+           className={`hover:text-green-100 transition-colors ${isActive("/pain-injury-form")}`}
+         >
+           Pain & Injury
+         </Link>
+
 
         </nav> */}
       </div>

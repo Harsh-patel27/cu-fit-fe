@@ -12,6 +12,7 @@ import ActivityLevelSelection from "./pages/ActivityLevel";
 import Dashboard from "./pages/Dashboard";
 import DietPreference from "./pages/DietPreference"; 
 import MealPlanSelection from "./pages/MealPlanSelection";
+import PainAndInjuryForm from "./pages/PainAndInjuryForm";
 
 const AppLayout = ({ children }) => {
     const isAuthPage = ["/login", "/signup"].includes(window.location.pathname);
@@ -40,6 +41,7 @@ function App() {
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/diet-preference" element={<DietPreference />} /> 
                     <Route path="/meal-plan-selection" element={<MealPlanSelection />} />
+                    <Route path="/pain-injury-form" element={<PainAndInjuryForm />} />
                 </Routes>
             </AppLayout>
         </Router>
