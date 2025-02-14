@@ -10,7 +10,8 @@ import DietSelection from "./pages/DietSelection";
 import GoalSelection from "./pages/GoalSelection";
 import ActivityLevelSelection from "./pages/ActivityLevel";
 import Dashboard from "./pages/Dashboard";
-import DietPreference from "./pages/DietPreference"; // ✅ Add the new page
+import DietPreference from "./pages/DietPreference"; 
+import MealPlanSelection from "./pages/MealPlanSelection";
 
 const AppLayout = ({ children }) => {
     const isAuthPage = ["/login", "/signup"].includes(window.location.pathname);
@@ -37,7 +38,8 @@ function App() {
                     <Route path="/goal-selection" element={<GoalSelection />} />
                     <Route path="/activity-level" element={<ActivityLevelSelection />} />
                     <Route path="/dashboard" element={<Dashboard />} />
-                    <Route path="/diet-preference" element={<DietPreference />} /> {/* ✅ Fix route */}
+                    <Route path="/diet-preference" element={<DietPreference />} /> 
+                    <Route path="/meal-plan-selection" element={<MealPlanSelection />} />
                 </Routes>
             </AppLayout>
         </Router>
