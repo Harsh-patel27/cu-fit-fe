@@ -35,14 +35,13 @@ const Header = () => {
           >
             Meal Plan
           </Link>
-          <Link
-            to="/diet-selection"
-            className={`hover:text-green-100 transition-colors ${isActive(
-              "/diet-selection"
-            )}`}
-          >
-            Diet Selection
-          </Link>
+         <Link
+           to="/diet-preference"
+           className={`hover:text-green-100 transition-colors ${isActive("/diet-preference")}`}
+         >
+           Diet Preference
+         </Link>
+
         </nav> */}
       </div>
     </header>
