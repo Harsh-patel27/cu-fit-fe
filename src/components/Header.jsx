@@ -53,7 +53,12 @@ const Header = () => {
          >
            Pain & Injury
          </Link>
-
+         <Link
+           to="/cooking-time"
+           className={`hover:text-green-100 transition-colors ${isActive("/cooking-time")}`}
+         >
+           Cooking Time
+         </Link>
 
         </nav> */}
       </div>
