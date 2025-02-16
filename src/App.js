@@ -14,7 +14,7 @@ import DietPreference from "./pages/DietPreference";
 import MealPlanSelection from "./pages/MealPlanSelection";
 import PainAndInjuryForm from "./pages/PainAndInjuryForm";
 import CookingTimeSelection from"./pages/CookingTimeSelection";
-
+import ExerciseRoutine from "./pages/ExerciseRoutine";
 const AppLayout = ({ children }) => {
     const isAuthPage = ["/login", "/signup"].includes(window.location.pathname);
 
@@ -44,6 +44,7 @@ function App() {
                     <Route path="/meal-plan-selection" element={<MealPlanSelection />} />
                     <Route path="/pain-injury-form" element={<PainAndInjuryForm />} />
                     <Route path="/cooking-time" element={<CookingTimeSelection />} />
+                    <Route path="/exercise-routine" element={<ExerciseRoutine />} />
                 </Routes>
             </AppLayout>
         </Router>

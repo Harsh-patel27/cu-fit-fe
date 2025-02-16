@@ -59,6 +59,13 @@ const Header = () => {
          >
            Cooking Time
          </Link>
+         <Link
+           to="/exercise-routine"
+           className={`hover:text-green-100 transition-colors ${isActive("/exercise-routine")}`}
+         >
+           Exercise Routine
+         </Link>
+
 
         </nav> */}
       </div>
