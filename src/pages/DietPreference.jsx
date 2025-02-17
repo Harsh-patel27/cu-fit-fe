@@ -18,6 +18,22 @@ const DietPreference = () => {
         setSelectedDiet(dietId);
     };
 
+    const handleNext = async () => {
+        try {
+            await fetch("http://localhost:8000/update-profile/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Token ${localStorage.getItem("authToken")}`,
+                },
+                body: JSON.stringify({ diet_preference: selectedDiet }),
+            });
+            navigate("/cooking-time");
+        } catch (error) {
+            console.error("Error updating profile:", error);
+        }
+    };
+
     return (
         <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
@@ -36,11 +52,11 @@ const DietPreference = () => {
                             key={diet.id}
                             onClick={() => handleDietSelect(diet.id)}
                             className={`p-6 rounded-lg border-2 transition-all duration-200 hover:shadow-lg
-                ${selectedDiet === diet.id
+                                ${selectedDiet === diet.id
                                     ? "border-green-500 bg-green-50"
                                     : "border-gray-200 bg-white hover:border-green-300"
                                 }
-              `}
+                            `}
                         >
                             <div className="text-4xl mb-3">{diet.icon}</div>
                             <h3 className="text-lg font-semibold text-gray-900 mb-2">
@@ -57,7 +73,7 @@ const DietPreference = () => {
                 {selectedDiet && (
                     <div className="mt-8 text-center">
                         <button
-                            onClick={() => navigate("/next-page")} // Change to the actual next page route
+                            onClick={handleNext}
                             className="bg-green-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors duration-200"
                         >
                             Next

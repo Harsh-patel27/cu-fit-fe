@@ -1,54 +1,38 @@
-﻿import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+﻿import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import GoalSelection from "./pages/GoalSelection";
+import DietSelection from "./pages/DietSelection";
+import DietPreference from "./pages/DietPreference";
+import CookingTimeSelection from "./pages/CookingTimeSelection";
+import MealPlanSelection from "./pages/MealPlanSelection";
+import MealPlan from "./pages/MealPlan";
+import ActivityLevelSelection from "./pages/ActivityLevelSelection";
+import ExerciseRoutine from "./pages/ExerciseRoutine";
+import PainAndInjuryForm from "./pages/PainAndInjuryForm";
+import Dashboard from "./pages/Dashboard";
 import Signup from "./pages/signup";
 import Login from "./pages/login";
-import CalendarPage from "./pages/Calender";
-import MealPlan from "./pages/MealPlan";
-import Header from "./components/Header";
-import DietSelection from "./pages/DietSelection";
-import GoalSelection from "./pages/GoalSelection";
-import ActivityLevelSelection from "./pages/ActivityLevel";
-import Dashboard from "./pages/Dashboard";
-import DietPreference from "./pages/DietPreference"; 
-import MealPlanSelection from "./pages/MealPlanSelection";
-import PainAndInjuryForm from "./pages/PainAndInjuryForm";
-import CookingTimeSelection from"./pages/CookingTimeSelection";
-import ExerciseRoutine from "./pages/ExerciseRoutine";
-const AppLayout = ({ children }) => {
-    const isAuthPage = ["/login", "/signup"].includes(window.location.pathname);
-
-    return (
-        <>
-            {!isAuthPage && <Header />}
-            {children}
-        </>
-    );
-};
 
 function App() {
     return (
         <Router>
-            <AppLayout>
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/signup" element={<Signup />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/calender" element={<CalendarPage />} />
-                    <Route path="/mealplan" element={<MealPlan />} />
-                    <Route path="/diet-selection" element={<DietSelection />} />
-                    <Route path="/goal-selection" element={<GoalSelection />} />
-                    <Route path="/activity-level" element={<ActivityLevelSelection />} />
-                    <Route path="/dashboard" element={<Dashboard />} />
-                    <Route path="/diet-preference" element={<DietPreference />} /> 
-                    <Route path="/meal-plan-selection" element={<MealPlanSelection />} />
-                    <Route path="/pain-injury-form" element={<PainAndInjuryForm />} />
-                    <Route path="/cooking-time" element={<CookingTimeSelection />} />
-                    <Route path="/exercise-routine" element={<ExerciseRoutine />} />
-                </Routes>
-            </AppLayout>
+            <Routes>
+            
+                <Route path="/signup" element={<Signup />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/" element={<Login />} />
+                <Route path="/goal-selection" element={<GoalSelection />} />
+                <Route path="/diet-selection" element={<DietSelection />} />
+                <Route path="/diet-preference" element={<DietPreference />} />
+                <Route path="/cooking-time" element={<CookingTimeSelection />} />
+                <Route path="/meal-plan-selection" element={<MealPlanSelection />} />
+                <Route path="/meal-plan" element={<MealPlan />} />
+                <Route path="/activity-level" element={<ActivityLevelSelection />} />
+                <Route path="/exercise-routine" element={<ExerciseRoutine />} />
+                <Route path="/pain-injury-form" element={<PainAndInjuryForm />} />
+                <Route path="/dashboard" element={<Dashboard />} />
+            </Routes>
         </Router>
     );
 }
 
-export default App; // ✅ Ensure this is not duplicated
+export default App;
