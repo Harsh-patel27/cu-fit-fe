@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -59,9 +59,7 @@ const Login = () => {
             const response = await axios.post(`${API_BASE_URL}/login/`, formData);
             console.log("Login Success:", response.data);
             setErrorMessage("");
-
-            // Redirect to goal selection page after successful login
-            navigate("/goal-selection"); // This is where you want to navigate after login
+            navigate("/calender");
         } catch (error) {
             console.error("Login Error:", error);
             setErrorMessage("Login failed. Please check your credentials.");
@@ -156,3 +154,4 @@ const Login = () => {
 };
 
 export default Login;
+
