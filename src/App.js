@@ -12,7 +12,7 @@ import Dashboard from "./pages/Dashboard";
 import Signup from "./pages/signup";
 import Login from "./pages/login";
 import BMICalculator from "./pages/Bmicalculator";
-
+import Calender from "./pages/Calender";
 function App() {
     return (
         <Router>
@@ -32,6 +32,7 @@ function App() {
                 <Route path="/pain-injury-form" element={<PainAndInjuryForm />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/bmi-calculator" element={<BMICalculator />} />
+                <Route path="/calender" element={<Calender />} />
             </Routes>
         </Router>
     );
