@@ -55,7 +55,7 @@ const CalendarPage = () => {
       // });
       
       alert('Rest days saved successfully!');
-      navigate('/diet-preference');
+      navigate('/goal-selection');
     } catch (error) {
       console.error('Error saving rest days:', error);
       alert('Failed to save rest days. Please try again.');
