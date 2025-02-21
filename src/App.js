@@ -13,6 +13,7 @@ import Signup from "./pages/signup";
 import Login from "./pages/login";
 import BMICalculator from "./pages/Bmicalculator";
 import Calender from "./pages/Calender";
+import Home from "./pages/Home";
 function App() {
     return (
         <Router>
@@ -20,7 +21,7 @@ function App() {
             
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/login" element={<Login />} />
-                <Route path="/" element={<Login />} />
+                <Route path="/" element={<Home  />} />
                 <Route path="/goal-selection" element={<GoalSelection />} />
                 <Route path="/diet-selection" element={<DietSelection />} />
                 <Route path="/diet-preference" element={<DietPreference />} />
