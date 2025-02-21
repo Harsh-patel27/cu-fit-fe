@@ -20,6 +20,31 @@ const mealPlans = {
         snacks: { name: "Hummus & Carrots", link: "https://example.com/hummus" },
         dinner: { name: "Grilled Fish & Veggies", link: "https://example.com/fish" },
     },
+    Thursday: {
+        breakfast: { name: "Avocado Toast", link: "https://example.com/avocado" },
+        lunch: { name: "Grilled Cheese Sandwich", link: "https://example.com/sandwich" },
+        snacks: { name: "Protein Shake", link: "https://example.com/shake" },
+        dinner: { name: "Chicken Curry & Rice", link: "https://example.com/curry" },
+      },
+      Friday: {
+        breakfast: { name: "Egg Scramble", link: "https://example.com/eggs" },
+        lunch: { name: "Pasta Primavera", link: "https://example.com/pasta" },
+        snacks: { name: "Granola Bar", link: "https://example.com/granola" },
+        dinner: { name: "Turkey & Sweet Potato", link: "https://example.com/turkey" },
+      },
+      Saturday: {
+        breakfast: { name: "French Toast", link: "https://example.com/french-toast" },
+        lunch: { name: "Lentil Soup", link: "https://example.com/lentil-soup" },
+        snacks: { name: "Fruit Salad", link: "https://example.com/fruit-salad" },
+        dinner: { name: "Sushi Rolls", link: "https://example.com/sushi" },
+      },
+      Sunday: {
+        breakfast: { name: "Yogurt Parfait", link: "https://example.com/parfait" },
+        lunch: { name: "BBQ Chicken Bowl", link: "https://example.com/bbq" },
+        snacks: { name: "Dark Chocolate & Almonds", link: "https://example.com/chocolate" },
+        dinner: { name: "Veggie Pizza", link: "https://example.com/pizza" },
+      },
+    
 };
 
 const MealPlanSelection = () => {
