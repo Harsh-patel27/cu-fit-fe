@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const CalendarPage = () => {
+  const navigate = useNavigate();
   const [selectedDates, setSelectedDates] = useState([]);
 
   const handleDateClick = (date) => {
@@ -53,6 +55,7 @@ const CalendarPage = () => {
       // });
       
       alert('Rest days saved successfully!');
+      navigate('/diet-preference');
     } catch (error) {
       console.error('Error saving rest days:', error);
       alert('Failed to save rest days. Please try again.');
