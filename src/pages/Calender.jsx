@@ -55,7 +55,7 @@ const CalendarPage = () => {
       // });
       
       alert('Rest days saved successfully!');
-      navigate('/goal-selection');
+      navigate('/bmi-calculator');
     } catch (error) {
       console.error('Error saving rest days:', error);
       alert('Failed to save rest days. Please try again.');

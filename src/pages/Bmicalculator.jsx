@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function BMICalculator() {
   const [gender, setGender] = useState("male");
@@ -9,6 +10,8 @@ export default function BMICalculator() {
   const [weightUnit, setWeightUnit] = useState("kg");
   const [bmi, setBmi] = useState(null);
   const [comment, setComment] = useState("");
+
+  const navigate = useNavigate();
 
   const calculateBMI = () => {
     let heightInMeters = heightUnit === "cm" ? height / 100 : height * 0.3048;
@@ -22,23 +25,17 @@ export default function BMICalculator() {
     else setComment("Obese");
   };
 
+  const handleNext = () => {
+    navigate("/goal-selection");
+  };
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      
-      {/* هدر صفحه با دو بخش چپ و راست */}
-      <header className="w-full bg-green-600 text-white py-4 px-6 shadow-md flex justify-between items-center">
-        <span className="text-lg font-bold">CU Fit</span>
-        <div className="space-x-6 text-sm">
-        <a href="/calendar">Calendar</a>
-        <a href="/meal-plan">Meal Plan</a>
-        </div>
-      </header>
+     
 
       <div className="bg-white p-4 rounded-xl shadow-lg w-96 relative mt-5">
-        
-        {/* دکمه Back */}
         <button className="absolute top-3 left-3 bg-white text-green-600 font-bold px-4 py-2 rounded-lg shadow-md border border-green-600 hover:bg-gray-100 transition">
-          ⬅ Back
+          Back
         </button>
 
         <h2 className="text-xl font-bold mb-3 text-center mt-8">BMI Calculator</h2>
@@ -70,9 +67,7 @@ export default function BMICalculator() {
         <label className="text-sm">Age:</label>
         <input type="number" className="w-full p-1 border rounded mb-2" value={age} onChange={(e) => setAge(e.target.value)} />
 
-        {/* دکمه Calculate */}
-        <button className="w-full bg-green-500 text-white p-2 rounded mt-3 hover:bg-green-700 transition mx-auto block"
-          onClick={calculateBMI}>
+        <button className="w-full bg-green-500 text-white p-2 rounded mt-3 hover:bg-green-700 transition mx-auto block" onClick={calculateBMI}>
           Calculate
         </button>
 
@@ -83,11 +78,11 @@ export default function BMICalculator() {
           </div>
         )}
 
-        {/* دکمه Next - حالا کاملاً زیر Calculate هست */}
-        <button className="w-full mt-4 bg-white text-green-600 font-bold px-4 py-2 rounded-lg shadow-md border border-green-600 hover:bg-gray-100 transition">
-          Next ➡
+        <button className="w-full mt-4 bg-white text-green-600 font-bold px-4 py-2 rounded-lg shadow-md border border-green-600 hover:bg-gray-100 transition" onClick={handleNext}>
+          Next
         </button>
       </div>
     </div>
   );
 }
+
