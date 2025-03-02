@@ -59,6 +59,7 @@ const Login = () => {
             const response = await axios.post(`${API_BASE_URL}/login/`, formData);
             console.log("Login Success:", response.data);
             setErrorMessage("");
+            localStorage.setItem("authToken", response.data.access_token);
             navigate("/calender");
         } catch (error) {
             console.error("Login Error:", error);
