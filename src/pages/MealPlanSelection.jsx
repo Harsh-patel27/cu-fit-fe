@@ -57,7 +57,7 @@ const MealPlanSelection = () => {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    Authorization: `Token ${localStorage.getItem("authToken")}`,
+                    Authorization: `Bearer ${localStorage.getItem("authToken")}`,
                 },
                 body: JSON.stringify({ meal_plan: selectedDay }),
             });

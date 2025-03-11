@@ -29,9 +29,9 @@ const MealPlan = () => {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    Authorization: `Token ${localStorage.getItem("authToken")}`,
+                    Authorization: `Bearer ${localStorage.getItem("authToken")}`,
                 },
-                body: JSON.stringify({ meal_plan_details: selectedMeals }),
+                body: JSON.stringify({ meal_plan_selection: selectedMeals.join(",") }),
             });
             navigate("/activity-level");
         } catch (error) {

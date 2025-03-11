@@ -20,7 +20,7 @@ const DietSelection = () => {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    Authorization: `Token ${localStorage.getItem("authToken")}`,
+                    Authorization: `Bearer ${localStorage.getItem("authToken")}`,
                 },
                 body: JSON.stringify({ diet_selection: selectedDiet }),
             });
